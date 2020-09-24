@@ -1,9 +1,11 @@
 import numpy as np
 from scipy.special import expi
 from rpy2.robjects.functions import rinterface
+from rpy2.robjects.packages import importr
 
-from rayleigh_fading import _quant_rayleigh
 from ergodic_capac_ra import bounds_ergodic
+
+stats_r = importr("stats")
 
 def _quant_rayleigh(n, lam=None):
     if lam is None:

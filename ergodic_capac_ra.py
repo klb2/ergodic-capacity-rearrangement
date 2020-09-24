@@ -8,7 +8,7 @@ from rpy2.robjects.packages import importr
 base_r = importr("base")
 stats_r = importr("stats")
 r = robjects.r
-r.source('ergodicRA.R')
+r.source('RAergodic.R')
 #qrmtools = importr("qrmtools")
 
 def rearrangement_supermod(quant_func, num_levels):
