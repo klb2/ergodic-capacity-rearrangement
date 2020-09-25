@@ -1,3 +1,7 @@
+# TODO: Add hint that this is modified from qrmtools
+# ...
+
+
 library("qrmtools")
 
 supermodRA <- function(qF, N, abstol=0, n.lookback=length(qF), max.ra=Inf,

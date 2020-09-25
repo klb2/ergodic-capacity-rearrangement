@@ -2,32 +2,37 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-from rayleigh_fading import (rayleigh_best_ergodic, rayleigh_comon_ergodic,
-                             rayleigh_iid_ergodic, rayleigh_worst_ergodic)
+from rayleigh_fading import (rayleigh_best_ergodic_ra, rayleigh_comon_ergodic,
+                             rayleigh_iid_ergodic, rayleigh_worst_ergodic_ra,
+                             rayleigh_best_ergodic)
 
 def main(snr_db=10., num_levels=1000, plot=True, export=False):
     n = np.arange(2, 10)
     snr = 10**(snr_db/10.)
-    best_case = np.array([rayleigh_best_ergodic(snr, _n, num_levels=num_levels) for _n in n])
-    worst_case = np.array([rayleigh_worst_ergodic(snr, _n, num_levels=num_levels) for _n in n])
+    best_case_ra = np.array([rayleigh_best_ergodic_ra(snr, _n, num_levels=num_levels) for _n in n])
+    worst_case_ra = np.array([rayleigh_worst_ergodic_ra(snr, _n, num_levels=num_levels) for _n in n])
+    best_case_exact = np.array([rayleigh_best_ergodic(snr, _n) for _n in n])
+    #print(best_case_exact)
     comon = rayleigh_comon_ergodic(snr, n)
     indep = rayleigh_iid_ergodic(snr, n)
     if export:
         filename = "EC-rayleigh-snr{}-numLev{}.dat".format(snr_db, num_levels)
-        results = {"bestLow": best_case[:, 0], "bestUp": best_case[:, 1],
-                   "worstLow": worst_case[:, 0], "worstUp": worst_case[:, 1],
+        results = {"bestExact": best_case_exact,
+                   "bestLow": best_case_ra[:, 0], "bestUp": best_case_ra[:, 1],
+                   "worstLow": worst_case_ra[:, 0], "worstUp": worst_case_ra[:, 1],
                    "comon": comon, "iid": indep, "n": n}
         export_data(results, filename)
     num_levels = [5, 10, 100, 1000, 10000]
-    best_case_quant = np.array([rayleigh_best_ergodic(snr, 5, num_levels=_levels) for _levels in num_levels])
+    best_case_quant = np.array([rayleigh_best_ergodic_ra(snr, 5, num_levels=_levels) for _levels in num_levels])
     if plot:
         fig1, axs1 = plt.subplots()
-        axs1.plot(n, best_case, 'o--', c='b', label="Best Case")
-        axs1.plot(n, worst_case, 'o--', c='r', label="Worst Case")
+        axs1.plot(n, best_case_ra, 'o--', c='b', label="Best Case RA")
+        axs1.plot(n, worst_case_ra, 'o--', c='r', label="Worst Case RA")
         axs1.plot(n, comon, 'o--', c='orange', label="Comonotonic Exact")
+        axs1.plot(n, best_case_exact, 'o--', label="Best Case Exact")
         axs1.legend()
         fig2, axs2 = plt.subplots(subplot_kw={"projection": "3d"})
-        best_case = rayleigh_best_ergodic(snr, 3, return_ra=True, num_levels=1000)
+        best_case = rayleigh_best_ergodic_ra(snr, 3, return_ra=True, num_levels=1000)
         ra_best = best_case[1][0]
         #print(ra_best)
         #ra_best = 1.-np.exp(-ra_best)
