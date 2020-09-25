@@ -23,7 +23,14 @@ def main(snr_db=10., num_levels=1000, plot=True, export=False):
                    "comon": comon, "iid": indep, "n": n}
         export_data(results, filename)
     num_levels = [5, 10, 100, 1000, 10000]
-    best_case_quant = np.array([rayleigh_best_ergodic_ra(snr, 5, num_levels=_levels) for _levels in num_levels])
+    n_quant = 3
+    best_case_quant = np.array([rayleigh_best_ergodic_ra(snr, n_quant, num_levels=_levels) for _levels in num_levels])
+    if export:
+        filename = "quantgap-rayleigh-snr{}-n{}.dat".format(snr_db, n_quant)
+        results = {"numLevels": num_levels, "upper": best_case_quant[:, 1],
+                   "lower": best_case_quant[:, 0],
+                   "gap": np.diff(best_case_quant, axis=1).ravel()}
+        export_data(results, filename)
     if plot:
         fig1, axs1 = plt.subplots()
         axs1.plot(n, best_case_ra, 'o--', c='b', label="Best Case RA")
