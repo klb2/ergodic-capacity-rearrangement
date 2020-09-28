@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.special import expi
+from scipy.special import expi, expn
 from scipy import integrate
 from rpy2.robjects.functions import rinterface
 from rpy2.robjects.packages import importr
@@ -30,8 +30,12 @@ def rayleigh_best_ergodic(snr, n):
 
 def rayleigh_iid_ergodic(snr, n):
     # Sum is Gamma-distributed
-    #return NotImplemented
-    return n
+    _part1 = np.log2(np.e) * np.exp(1/snr)
+    k = np.arange(0, max(n))
+    #_part2 = gammaincc(-k, 1./snr)*gamma(-k)/snr**k
+    _part2 = expn(1+k, 1/snr)
+    _part2 = np.cumsum(_part2)[-len(n):]
+    return _part1 * _part2
 
 def rayleigh_comon_ergodic(snr, n):
     _part1 = np.exp(1./(n*snr))

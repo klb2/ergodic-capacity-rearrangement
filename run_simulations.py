@@ -7,12 +7,12 @@ from rayleigh_fading import (rayleigh_best_ergodic_ra, rayleigh_comon_ergodic,
                              rayleigh_best_ergodic)
 
 def main(snr_db=10., num_levels=1000, plot=True, export=False):
-    n = np.arange(2, 10)
+    #n = np.arange(2, 11)
+    n = np.arange(2, 31)
     snr = 10**(snr_db/10.)
     best_case_ra = np.array([rayleigh_best_ergodic_ra(snr, _n, num_levels=num_levels) for _n in n])
     worst_case_ra = np.array([rayleigh_worst_ergodic_ra(snr, _n, num_levels=num_levels) for _n in n])
     best_case_exact = np.array([rayleigh_best_ergodic(snr, _n) for _n in n])
-    #print(best_case_exact)
     comon = rayleigh_comon_ergodic(snr, n)
     indep = rayleigh_iid_ergodic(snr, n)
     if export:
@@ -37,6 +37,7 @@ def main(snr_db=10., num_levels=1000, plot=True, export=False):
         axs1.plot(n, worst_case_ra, 'o--', c='r', label="Worst Case RA")
         axs1.plot(n, comon, 'o--', c='orange', label="Comonotonic Exact")
         axs1.plot(n, best_case_exact, 'o--', label="Best Case Exact")
+        axs1.plot(n, indep, 'o--', label="Independent")
         axs1.legend()
         fig2, axs2 = plt.subplots(subplot_kw={"projection": "3d"})
         best_case = rayleigh_best_ergodic_ra(snr, 3, return_ra=True, num_levels=1000)
