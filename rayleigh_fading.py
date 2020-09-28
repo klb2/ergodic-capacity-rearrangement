@@ -1,10 +1,11 @@
 import numpy as np
 from scipy.special import expi
+from scipy import integrate
 from rpy2.robjects.functions import rinterface
 from rpy2.robjects.packages import importr
 
 from ergodic_capac_ra import bounds_ergodic
-from best_case_rayleigh import phi as phi_best
+from best_case_rayleigh import H, determine_cmin
 
 stats_r = importr("stats")
 
@@ -21,7 +22,11 @@ rayleigh_best_ergodic_ra = bounds_ergodic("best")(_quant_rayleigh)
 rayleigh_worst_ergodic_ra = bounds_ergodic("worst")(_quant_rayleigh)
 
 def rayleigh_best_ergodic(snr, n):
-    return np.log2(1.+snr*phi_best(0, n))
+    cmin = determine_cmin(n, 0)
+    _int_func = lambda x, n: np.log2(1 + snr*H(x, n, 0))
+    _integral = integrate.quad(_int_func, 0, cmin, args=(n,))[0]
+    _part2 = (1-n*cmin)*_int_func(cmin, n)
+    return n*_integral + _part2
 
 def rayleigh_iid_ergodic(snr, n):
     # Sum is Gamma-distributed

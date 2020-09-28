@@ -86,14 +86,3 @@ def determine_cmin(n, a):
         return 1
     #print(solution)
     return solution.root
-
-def phi(a, n, cmin=None):
-    if cmin is None:
-        cmin = determine_cmin(n, a)
-    if cmin > 0:
-        _phi = H(cmin, n, a)
-    elif cmin == 0:
-        _phi = n*psi(a)
-    else:
-        raise ValueError("cmin must not be negative!")
-    return _phi
