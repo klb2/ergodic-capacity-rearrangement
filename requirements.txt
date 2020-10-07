@@ -1,5 +1,5 @@
-numpy
-scipy
-jupyter
-matplotlib
-rpy2
+numpy==1.19
+scipy==1.5
+jupyter==1.0
+matplotlib==3.3
+rpy2==3.3
