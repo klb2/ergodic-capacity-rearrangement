@@ -6,7 +6,7 @@ ENV USER ${NB_USER}
 ENV NB_UID ${NB_UID}
 ENV HOME /home/${NB_USER}
 
-RUN useradd -D --uid ${NB_UID} ${NB_USER}
+RUN useradd -m --uid ${NB_UID} ${NB_USER}
 
 #RUN adduser --disabled-password \
 #    --gecos "Default user" \
