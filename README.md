@@ -45,17 +45,19 @@ to run the notebooks in your browser without setting everything up locally.
 If you want to run it locally on your machine, Python3 and Jupyter are needed.
 The present code was developed and tested with the following versions:
 - Python 3.8.5
+- R 4.0.2
 - Jupyter 1.0.0
 - numpy 1.19.2
 - scipy 1.5.2
 - rpy2 3.3.5
 
-Make sure you have [Python3](https://www.python.org/downloads/) installed on
-your computer.
+Make sure you have [Python3](https://www.python.org/downloads/) and
+[R](https://www.r-project.org/) installed on your computer.
 You can then install the required packages (including Jupyter) by running
 ```bash
 pip3 install -r requirements.txt
-jupyter nbextension enable --py widgetsnbextension
+jupyter nbextension enable --py widgetsnbextension ipympl
+R -e "install.packages('qrmtools', repos='https://cloud.r-project.org/')"
 ```
 This will install all the needed packages which are listed in the requirements 
 file. The second line enables the interactive controls in the Jupyter
