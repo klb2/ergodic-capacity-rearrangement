@@ -1,7 +1,5 @@
 FROM rpy2/jupyter-ubuntu:master-20.04
 
-RUN R -e "install.packages('qrmtools',dependencies=TRUE)"
-
 ARG NB_USER=jupyteruser
 ARG NB_UID=1000
 ENV USER ${NB_USER}
@@ -18,3 +16,4 @@ RUN chown -R ${NB_UID} ${HOME}
 USER ${NB_USER}
 
 RUN pip3 --no-cache-dir install -r ${HOME}/requirements.txt
+RUN R -e "install.packages('qrmtools',dependencies=TRUE)"
