@@ -1,5 +1,7 @@
 FROM rpy2/jupyter-ubuntu:master-20.04
 
+RUN R -e "install.packages('qrmtools',dependencies=TRUE)"
+
 ARG NB_USER=jupyteruser
 ARG NB_UID=1000
 ENV USER ${NB_USER}
