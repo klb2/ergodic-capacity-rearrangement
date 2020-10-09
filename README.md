@@ -1,23 +1,22 @@
 # Bounds on the Ergodic Capacity for Dependent Fading Channels
 
 This repository contains supplementary material for the paper "Calculation of
-Bounds on the Ergodic Capacity for Fading Channels with Arbitrary Marginals and
-Dependency Uncertainty" (Karl-L.  Besser and Eduard Jorswieck, IEEE
-International Conference on Communications, 2021,
-[doi:XXX](https://doi.org/XXX)).
+Bounds on the Ergodic Capacity for Fading Channels with Dependency Uncertainty"
+(Karl-L.  Besser and Eduard Jorswieck, Submitted to 2021 IEEE International
+Conference on Communications (ICC), 2021, [doi:XXX](https://doi.org/XXX)).
 
 The idea is to give an interactive version of the calculations and presented
 concepts to the reader. One can also change different parameters and explore
 different behaviors on their own.
 
-[![Binder](https://mybinder.org/badge_logo.svg)]()
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/klb2%2Fergodic-capacity-rearrangement/master)
 
 
 ## File List
 The following files are provided in this repository:
 
-* [Ergodic Capacity Bounds.ipynb](https://mybinder.org): Jupyter notebook that
-  contains the plots from the paper.
+* [Ergodic Capacity Bounds.ipynb](https://mybinder.org/v2/gl/klb2%2Fergodic-capacity-rearrangement/master?filepath=Ergodic%20Capacity%20Bounds.ipynb):
+  Jupyter notebook that contains the plots from the paper.
 * `rayleigh_fading.py`: Python module that contains all functions for the
   Rayleigh fading example.
 * `best_case_rayleigh.py`: Python module that contains the functions to
@@ -39,7 +38,7 @@ The following files are provided in this repository:
 ### Running it online
 The easiest way is to use services like [Binder](https://mybinder.org/) to run
 the notebook online. Simply navigate to
-[TODO](https://mybinder.org/v2/gl/klb2%2Fcopula-mu-performance-bounds/master)
+[https://mybinder.org/v2/gl/klb2%2Fergodic-capacity-rearrangement/master](https://mybinder.org/v2/gl/klb2%2Fergodic-capacity-rearrangement/master)
 to run the notebooks in your browser without setting everything up locally.
 
 ### Local Installation
