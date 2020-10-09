@@ -1,7 +1,17 @@
 FROM rpy2/jupyter-ubuntu:master-20.04
 
-WORKDIR /home/"${NB_USER}"/work/
+ARG NB_USER=user
+ARG NB_UID=1000
+ENV USER ${NB_USER}
+ENV NB_UID ${NB_UID}
+ENV HOME /home/${NB_USER}
 
-ARG RPY2_DOC_URL=https://rpy2.github.io/doc/latest/html/_static/notebooks
-RUN wget "${RPY2_DOC_URL}"/pandas.ipynb -P /home/"${NB_USER}"/work/ \
-  && wget "${RPY2_DOC_URL}"/jupyter.ipynb -P /home/"${NB_USER}"/work/
+RUN adduser --disabled-password \
+    --gecos "Default user" \
+    --uid ${NB_UID} \
+    ${NB_USER}
+
+COPY . ${HOME}
+USER root
+RUN chown -R ${NB_UID} ${HOME}
+USER ${NB_USER}
