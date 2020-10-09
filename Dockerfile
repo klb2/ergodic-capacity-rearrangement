@@ -14,7 +14,8 @@ ENV HOME /home/${NB_USER}
 
 COPY . ${HOME}
 USER root
-RUN apt-get install -y libssl-dev
+RUN apt-get update -qq && \
+	apt-get install -y libssl-dev
 RUN chown -R ${NB_UID} ${HOME}
 RUN usermod -a -G staff ${NB_USER}
 RUN R -e "install.packages('qrmtools',repos='https://cloud.r-project.org/')"
