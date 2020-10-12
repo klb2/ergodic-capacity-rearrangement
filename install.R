@@ -1,1 +1,1 @@
-install.packages("qrmtools")
+install.packages("qrmtools", repos="https://cran.rstudio.com")
