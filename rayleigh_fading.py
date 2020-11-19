@@ -1,3 +1,34 @@
+"""Functions for Rayleigh fading channels.
+
+This module contains different functions to calculate the ergodic capacity for
+Rayleigh fading channels.
+
+
+Copyright (C) 2020 Karl-Ludwig Besser
+
+This program is used in the article:
+Karl-Ludwig Besser and Eduard Jorswieck, "Calculation of Bounds on the Ergodic
+Capacity for Fading Channels with Dependency Uncertainty", Submitted to 2021
+IEEE International Conference on Communications (ICC).
+
+License:
+This program is licensed under the GPLv3 license. If you in any way use this
+code for research that results in publications, please cite our original
+article listed above.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+Author: Karl-Ludwig Besser, Technische Universität Braunschweig
+"""
+__author__ = "Karl-Ludwig Besser"
+__copyright__ = "Copyright (C) 2020 Karl-Ludwig Besser"
+__credits__ = ["Karl-Ludwig Besser", "Eduard A. Jorswieck"]
+__license__ = "GPLv3"
+__version__ = "1.0"
+
 import numpy as np
 from scipy.special import expi, expn
 from scipy import integrate

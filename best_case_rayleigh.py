@@ -13,7 +13,9 @@ Fading Wireless Channels", IEEE Transactions on Wireless Communications, 2020,
 DOI:10.1109/TWC.2020.2997332.
 
 This program belongs to the article
-Karl-Ludwig Besser and Eduard Jorswieck, "..."
+Karl-Ludwig Besser and Eduard Jorswieck, "Calculation of Bounds on the Ergodic
+Capacity for Fading Channels with Dependency Uncertainty", Submitted to 2021
+IEEE International Conference on Communications (ICC).
 
 License:
 This program is licensed under the GPLv3 license. If you in any way use this
