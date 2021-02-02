@@ -10,8 +10,8 @@ Copyright (C) 2020 Karl-Ludwig Besser
 
 This program is used in the article:
 Karl-Ludwig Besser and Eduard Jorswieck, "Calculation of Bounds on the Ergodic
-Capacity for Fading Channels with Dependency Uncertainty", Submitted to 2021
-IEEE International Conference on Communications (ICC).
+Capacity for Fading Channels with Dependency Uncertainty", 2021 IEEE
+International Conference on Communications (ICC), 2021.
 
 License:
 This program is licensed under the GPLv3 license. If you in any way use this

@@ -1,5 +1,25 @@
-# TODO: Add hint that this is modified from qrmtools
-# ...
+# Modified/wrapped version of the rearrangement algorithm.
+# 
+# This module contains a slightly modified version of the implementation of the
+# rearrangement algorithm from the `qrmtools` library version 0.0-13
+# (https://cran.r-project.org/package=qrmtools).
+# 
+# This code is part of the publication
+# Karl-Ludwig Besser and Eduard Jorswieck, "Calculation of Bounds on the
+# Ergodic Capacity for Fading Channels with Dependency Uncertainty", 2021 IEEE
+# International Conference on Communications (ICC), 2021.
+# License:
+# This program is licensed under the GPLv3 license. If you in any way use this
+# code for research that results in publications, please cite our original
+# article listed above.
+# 
+# This program is distributed in the hope that it will be useful, but WITHOUT
+# ANY # WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A # PARTICULAR PURPOSE.  # See the GNU General Public License for
+# more details.
+# 
+# Author: Karl-Ludwig Besser, Technische Universität Braunschweig
+
 
 
 library("qrmtools")

@@ -6,16 +6,16 @@ bound on the outage capacity for dependent Rayleigh fading channels.
 
 Copyright (C) 2020 Karl-Ludwig Besser
 
-Parts of this program are taken from https://gitlab.com/klb2/... which belongs
-to the article
-Karl-Ludwig Besser and Eduard Jorswieck, "Reliability Bounds for Dependent
-Fading Wireless Channels", IEEE Transactions on Wireless Communications, 2020,
-DOI:10.1109/TWC.2020.2997332.
+Parts of this program are taken from
+https://gitlab.com/klb2/reliability-bounds-dependent-fading-channels which
+belongs to the article Karl-Ludwig Besser and Eduard Jorswieck, "Reliability
+Bounds for Dependent Fading Wireless Channels", IEEE Transactions on Wireless
+Communications, 2020, DOI:10.1109/TWC.2020.2997332.
 
 This program belongs to the article
 Karl-Ludwig Besser and Eduard Jorswieck, "Calculation of Bounds on the Ergodic
-Capacity for Fading Channels with Dependency Uncertainty", Submitted to 2021
-IEEE International Conference on Communications (ICC).
+Capacity for Fading Channels with Dependency Uncertainty", 2021 IEEE
+International Conference on Communications (ICC), 2021.
 
 License:
 This program is licensed under the GPLv3 license. If you in any way use this
