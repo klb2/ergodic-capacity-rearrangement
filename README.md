@@ -2,8 +2,8 @@
 
 This repository contains supplementary material for the paper "Calculation of
 Bounds on the Ergodic Capacity for Fading Channels with Dependency Uncertainty"
-(Karl-L.  Besser and Eduard Jorswieck, Submitted to 2021 IEEE International
-Conference on Communications (ICC), 2021, [doi:XXX](https://doi.org/XXX)).
+(Karl-L.  Besser and Eduard Jorswieck, 2021 IEEE International Conference on
+Communications (ICC), 2021, [doi:XXX](https://doi.org/XXX)).
 
 The idea is to give an interactive version of the calculations and presented
 concepts to the reader. One can also change different parameters and explore
@@ -23,7 +23,8 @@ The following files are provided in this repository:
   calculate the exact best case for homogeneous Rayleigh fading. The code is
   taken from
   [https://gitlab.com/klb2/reliability-bounds-dependent-fading-channels](https://gitlab.com/klb2/reliability-bounds-dependent-fading-channels).
-* `run_simulations.py`: Python script to run the Rayleigh fading example.
+* `run_simulations.py`: Python script to run the Rayleigh fading example. Use
+  `python run_simulations.py --help` to get an overview of the options.
 * `mixed_marginals.py`: Python module that contains all functions for the
   example with mixed marginal distributions. This can be run to reproduce the
   results of the mixed marginal example.
@@ -50,6 +51,7 @@ The present code was developed and tested with the following versions:
 - numpy 1.19.2
 - scipy 1.5.2
 - rpy2 3.3.5
+- qrmtools 0.0-13
 
 Make sure you have [Python3](https://www.python.org/downloads/) and
 [R](https://www.r-project.org/) installed on your computer.
