@@ -3,7 +3,7 @@
 This repository contains supplementary material for the paper "Calculation of
 Bounds on the Ergodic Capacity for Fading Channels with Dependency Uncertainty"
 (Karl-L.  Besser and Eduard Jorswieck, 2021 IEEE International Conference on
-Communications (ICC), 2021, [doi:XXX](https://doi.org/XXX)).
+Communications (ICC), 2021, [doi:10.1109/ICC42927.2021.9500869](https://doi.org/10.1109/ICC42927.2021.9500869)).
 
 The idea is to give an interactive version of the calculations and presented
 concepts to the reader. One can also change different parameters and explore
@@ -80,6 +80,20 @@ This research was supported in part by the Deutsche Forschungsgemeinschaft
 This program is licensed under the GPLv3 license. If you in any way use this
 code for research that results in publications, please cite our original
 article listed above.
+
+You can use the following BibTeX entry
+```
+@inproceedings{Besser2021icc,
+	address = {Montreal, QC, Canada},
+	author = {Besser, Karl-Ludwig and Jorswieck, Eduard A.},
+	booktitle = {ICC 2021 -- IEEE International Conference on Communications (ICC)},
+	month = {6},
+	publisher = {IEEE},
+	title = {Calculation of Bounds on the Ergodic Capacity for Fading Channels with Dependency Uncertainty},
+	year = {2021},
+	doi = {10.1109/ICC42927.2021.9500869},
+}
+```
 
 Parts of this code are based on the
 [qrmtools](https://cran.r-project.org/package=qrmtools) R package, which is
