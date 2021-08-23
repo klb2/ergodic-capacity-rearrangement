@@ -82,7 +82,7 @@ code for research that results in publications, please cite our original
 article listed above.
 
 You can use the following BibTeX entry
-```
+```bibtex
 @inproceedings{Besser2021icc,
 	address = {Montreal, QC, Canada},
 	author = {Besser, Karl-Ludwig and Jorswieck, Eduard A.},
